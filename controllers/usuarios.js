@@ -76,10 +76,11 @@ const indexUsuario = async ( req, res=response)=> {
       //Eliminar cambiando solo el estado del usuario
 
       const usuario = await Usuario.findByIdAndUpdate(id,{estado:false})
-
+    const usuarioAutenticado = req.usuario;
 
     res.json({
-      usuario
+      usuario,
+      usuarioAutenticado
     })
   } 
 
